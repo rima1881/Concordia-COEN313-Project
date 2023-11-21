@@ -14,16 +14,16 @@ in order to reset the count
     <td>Y</td>
     <td>removes one from the count on the rising edge</td>
 </tr>
-<td>
+<tr>
     <td>reset</td>
     <td>reset the count to 0</td>
-</td>
-<td>
+</tr>
+<tr>
     <td>Warn</td>
     <td>It is turned to one when count reaches maximum(63) </td>
-</td>
-<td>
+</tr>
+<tr>
     <td>clk</td>
     <td>clock for the chip</td>
-</td>
+</tr>
 </table>
