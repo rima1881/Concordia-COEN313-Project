@@ -7,6 +7,10 @@ in order to reset the count
 ## Signal Table
 <table>
 <tr>
+    <td>Count</td>
+    <td>is sincked with the data stored in the register</td>
+</tr>
+<tr>
     <td>X</td>
     <td>Adds one to the count on the rising edge</td>
 </tr>
@@ -19,7 +23,7 @@ in order to reset the count
     <td>reset the count to 0</td>
 </tr>
 <tr>
-    <td>Warn</td>
+    <td>Z</td>
     <td>It is turned to one when count reaches maximum(63) </td>
 </tr>
 <tr>
