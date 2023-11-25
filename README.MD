@@ -56,6 +56,3 @@ This VHDL code implements a counter chip with a maximum value of 63, utilizing a
     <td>Sets the maximum value for the counter.</td>
 </tr>
 </table>
-
-## Document
-To access additional information, refer to the documentation :0
