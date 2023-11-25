@@ -1,86 +1,414 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
 
 ENTITY counter_tb IS
+    port( 
+        result: out unsigned(5 downto 0);
+        Z: out std_logic
+    );
 END counter_tb;
 
 ARCHITECTURE behavior OF counter_tb IS
-    SIGNAL clk, reset, X, Y, Z : STD_LOGIC := '0';
-    SIGNAL result : STD_LOGIC_VECTOR(5 DOWNTO 0);
+    SIGNAL reset, X, Y: STD_LOGIC := '0';
+    Signal max_occupancy: unsigned(5 downto 0);
+
 BEGIN
-    -- Instantiate the counter unit
+
     UUT : ENTITY work.counter
         PORT MAP(
             X => X,
             Y => Y,
             reset => reset,
+            max_occupancy => max_occupancy,
             result => result,
             Z => Z
         );
 
-    -- Clock process
     PROCESS
     BEGIN
-        WAIT FOR 10 ns; -- Adjust the clock period as needed
-        clk <= NOT clk;
-    END PROCESS;
 
-    -- Stimulus process
-    PROCESS
-    BEGIN
-        -- Initialize inputs
         reset <= '1';
+        max_occupancy <= "111111";
         X <= '0';
         Y <= '0';
 
-        -- Apply reset
         WAIT FOR 20 ns;
         reset <= '0';
 
-        -- Test case 1: Increment counter
         WAIT FOR 10 ns;
         X <= '1';
         WAIT FOR 10 ns;
         X <= '0';
 
-        -- Test case 2: Decrement counter
         WAIT FOR 10 ns;
         Y <= '1';
         WAIT FOR 10 ns;
         Y <= '0';
 
-        -- Test case 3: Check full condition
         WAIT FOR 10 ns;
         X <= '1';
         WAIT FOR 10 ns;
         X <= '0';
 
-        -- Test case 4: Check sub condition in full state
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+
         WAIT FOR 10 ns;
         Y <= '1';
         WAIT FOR 10 ns;
         Y <= '0';
 
-        -- Add more test cases as needed
 
-        WAIT;
-    END PROCESS;
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
 
-    -- Monitor process
-    PROCESS
-    BEGIN
-        WAIT FOR 1 ns; -- Initial delay for signal stability
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
 
-        LOOP
-            WAIT UNTIL rising_edge(clk);
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
 
-            -- Display simulation time and relevant signals
-            IF reset = '1' THEN
-                REPORT "Simulation time: " & TIME'HIGH & " Reset asserted";
-            ELSE
-                REPORT "Simulation time: " & TIME'HIGH & " X = " & X & ", Y = " & Y & ", Z = " & Z & ", Result = " & result;
-            END IF;
-        END LOOP;
+        WAIT FOR 10 ns;
+        Y <= '1';
+        WAIT FOR 10 ns;
+        Y <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+
+        WAIT FOR 10 ns;
+        Y <= '1';
+        WAIT FOR 10 ns;
+        Y <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        X <= '1';
+        WAIT FOR 10 ns;
+        X <= '0';
+
+        WAIT FOR 10 ns;
+        Y <= '1';
+        WAIT FOR 10 ns;
+        Y <= '0';
+
+
     END PROCESS;
 
 END behavior;
